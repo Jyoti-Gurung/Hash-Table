@@ -124,6 +124,8 @@ int collisioncount;
 
   //print students
   if (action == 2) {
+
+    cout << endl;
   
     if(collisioncount > 3) {
     	for(int i = 0; i < 302; i++) {
@@ -156,11 +158,41 @@ int collisioncount;
 
     //remove student
     if (action == 3) {
+
+      cout << endl << "ID of Student you want to delete:" << endl;
+      int id;
+      cin >> id;
+
+      if(collisioncount > 3) {
+      	for(int i = 0; i < 302; i++) {
+      	  Node* temp = hashtable2[i];
+      	  while(temp != NULL) {
+      	    if (temp->id == id) {
+              cout << "Hello GECKO";
+              break;
+            }
+      	  }
+      	}
+      }
+      else {
+      	for(int i = 0; i < 151; i++) {
+      	  if(hashtable[i] != NULL) {
+      	    Node* temp = hashtable[i];
+      	    while(temp != NULL) {
+        	    if (temp->id == id) {
+                break;
+              }
+      	    }
+      	  }
+        }
+      }
       
     }
   
     //add a random student
     if (action == 4) {
+
+      cout << endl;
       
       int randomPick = rand() % 5;
       char firstNames[5][5] = {{'L','u','f','f','y'}, {'R','o','b','i','n'}, {'S','a','n','j','i'}, {'U','s','s','o','p'}, {'B','r','o','o','k'}};
@@ -186,6 +218,8 @@ int collisioncount;
       for (int i = 0; i < 4; i++) {
         cout << gpas[randomPick][i];
       }
+
+      cout << endl;
   
     }
     
